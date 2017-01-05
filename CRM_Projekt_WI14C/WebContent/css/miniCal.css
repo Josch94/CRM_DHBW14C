@@ -1,0 +1,104 @@
+
+* {box-sizing:border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana,sans-serif;}
+
+#miniCal {
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	text-indent: 0px;
+    line-height: 14px;
+    font-size: 14px;
+}
+
+.monate {
+    padding: 10px 15px;
+    width: 100%;
+    background: #337ab7;
+}
+
+.monate ul {
+    margin: 0;
+    padding: 0;
+}
+
+.monate ul li {
+    color: white;
+    /*font-size: 20px;*/
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.monate .prev {
+    float: left;
+}
+
+.monate .next {
+    float: right;
+}
+
+.wochentage {
+	
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.wochentage li {
+    display: inline-block;
+    width: 12.4%;
+    color: #666;
+    text-align: center;
+    
+}
+
+.tage {
+	width: 100%;
+    padding: 0;
+    background: #eee;
+    margin: 0;
+    padding-top:10px;
+}
+
+.tage li {
+    list-style-type: none;
+    display: inline-block;
+    width: 14.2%;
+    text-align: center;
+    padding: 0px 2px 0 2px;
+    margin-bottom: 5px;
+    font-size:12px;
+    min-height: 23px;
+    vertical-align: bottom;
+}
+
+.tage li p{
+	margin: -8px 0 0px;
+    color: red;
+    font-weight: bold;
+    font-size: 22px;
+    padding-bottom: 4px;
+}
+
+.tage li.active {
+    padding: 2px;
+    background: #337ab7;
+    color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .wochentage li, .tage li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .wochentage li, .tage li {width: 12.5%;}
+    .tage li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .wochentage li, .tage li {width: 12.2%;}
+}

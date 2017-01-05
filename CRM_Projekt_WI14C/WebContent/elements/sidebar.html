@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+   	<link href="css/sidebar.css" rel="stylesheet">
+   	<link rel="stylesheet" href="css/style.css">
+   	
+</head>
+<body>
+<div id="wrapper">
+		<style>
+			.sidebar_menu{
+				display: inline;
+				padding-left: 10px;
+				font-size: 20px;
+				font-weight:400;
+			}
+			
+			.sub_menu{
+				display: inline-block;
+				padding-left: 20px;
+				list-style:none;
+				width:100%;
+				font-size:16px;
+				line-height: 30px;
+			}
+		</style>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <ul class="sidebar_menu">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    <a href="#">Kalender</a>
+                    
+                    <li>
+                    	<div w3-include-html="miniCal.html"></div> 
+                    </li>
+                    
+                </ul>
+                <ul class="sidebar_menu">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    <a href="#">Termine</a>
+	                <li class="sub_menu">
+	                    <a href="#">Übersicht</a>
+	                </li>
+	                <li class="sub_menu">
+	                    <a href="#">Termin planen</a>
+	                </li>
+                </ul>
+                <ul class="sidebar_menu">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    <a href="#">Firmen</a>
+	                <li class="sub_menu">
+	                    <a href="#">Firmenübersicht</a>
+	                </li>
+	                <li class="sub_menu">
+	                    <a href="#">Ansprechpartner</a>
+	                </li>
+	            </ul>
+                <ul class="sidebar_menu">
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    <a href="#">Profil</a>
+	                    
+	                <li class="sub_menu">
+	                    <a href="#">Mein Profil</a>
+	                </li>
+	                <li class="sub_menu">
+	                    <a href="#">Passwort zurücksetzen</a>
+	                </li>
+           		</ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+        	<div class="container-fluid">
+        		<a href="#menu-toggle" class="" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+        	</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12" style="margin-top:30px;">
+                        

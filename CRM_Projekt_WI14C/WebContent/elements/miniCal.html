@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<script src="js/miniCal.js"></script>
+<link href="css/miniCal.css" rel="stylesheet">
+<head>
+<script>
+	//Heutiges Datum zum befüllen des Kalenders (sind globale Variablen, die immer verändert werden können)
+	var datum = new Date();
+	// .getMonth() liefert Int von 0-11 darum muss 1 dazugezählt werden
+	var datum_monat = datum.getMonth() + 1;
+	// .getFullYear() liefert aktuelles Jahr im Format YYYY
+	var datum_jahr = datum.getFullYear();
+	
+	//Kalender wird beim Laden der Seite bereits befüllt
+	window.onload = function () {	
+		Kalender(datum_monat, datum_jahr);
+	}
+	
+	//Blättern durch den Kalender (Hochblättern)
+	function upCal(){
+		
+		//So lange der Monat unter 12 ist, wird einfach hochgezählt
+		if(datum_monat <= 12){
+			datum_monat = datum_monat + 1;
+		}
+		//Falls Monat über 12, Jahr hochzählen und Monat wieder auf 1 setzen
+		if(datum_monat > 12){
+			datum_monat = 1;
+			datum_jahr = datum_jahr + 1;
+		}
+		//Alle Elemente der Tagesanzeige löschen und danach mit der Funktion Kalender() neu befüllen
+		var myNode = document.getElementById("tage");
+		while (myNode.firstChild) {
+		    myNode.removeChild(myNode.firstChild);
+		}
+		Kalender(datum_monat, datum_jahr);
+	}
+	
+	//Blättern durch den Kalender (Herunterblättern)
+	function downCal(){
+		
+		//So lange Monat größer als 1, einfach herunterzählen
+		if(datum_monat >= 1){
+			datum_monat = datum_monat - 1;
+		}
+		
+		//Wenn Monat unter 1 (also 0), dann Jahr um 1 verringern und Monat auf 12 setzen
+		if(datum_monat < 1){
+			datum_monat = 12;
+			datum_jahr = datum_jahr - 1;
+		}
+		
+		//Alle Elemente der Tagesanzeige löschen und danach mit der Funktion Kalender() neu befüllen
+		var myNode = document.getElementById("tage");
+		while (myNode.firstChild) {
+		    myNode.removeChild(myNode.firstChild);
+		}
+		Kalender(datum_monat, datum_jahr);
+	}
+
+</script>
+</head>
+
+<div id="miniCal">
+<div class="monate"> 
+  <ul>
+    <li class="prev" onclick="downCal();"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span></li>
+    <li class="next" onclick="upCal();"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></li>
+    <li id="current_monat"></li>
+  </ul>
+</div>
+<ul class="wochentage">
+  <li>Mo</li>
+  <li>Di</li>
+  <li>Mi</li>
+  <li>Do</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>So</li>
+</ul>
+<ul id="tage" class="tage"> 
+</ul>
+</div>
+</html>
